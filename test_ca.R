@@ -15,7 +15,7 @@ Y2 = data.matrix(otherdata[,c("Big", "Athletic", "Friendly", "Trainable", "Resou
 rownames(Y2) = otherdata[,c("Name")]
 
 # Compute CA
-myCA = myCA(Y)
+myCA = myCA(Y, lessMemory = FALSE)
 
 # Project supplementary rows
 other = myCA_project(myCA, Y2)
