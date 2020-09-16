@@ -29,7 +29,7 @@ myCA <- function (Y, lessMemory = TRUE) {
   
   if (lessMemory) {
     myCA_log("Launching IRLBA ...")
-    svd = irlba(S)    
+    svd = irlba(S, verbose = TRUE)    
   } else {
     myCA_log("Launching SVD ...")
     svd = svd(S)
