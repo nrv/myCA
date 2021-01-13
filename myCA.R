@@ -4,7 +4,7 @@
 library(irlba)
 library(Matrix)
 
-myCA <- function (Y, lessMemory = TRUE) {
+myCA <- function (Y, lessMemory = TRUE, nv = 5) {
   myCA_log("Data preparation ...")
   s = sum(Y)
   P = Y/s
@@ -29,7 +29,7 @@ myCA <- function (Y, lessMemory = TRUE) {
   
   if (lessMemory) {
     myCA_log("Launching IRLBA ...")
-    svd = irlba(S, verbose = TRUE)    
+    svd = irlba(S, nv = nv, verbose = TRUE)    
   } else {
     myCA_log("Launching SVD ...")
     svd = svd(S)
